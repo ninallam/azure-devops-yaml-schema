@@ -35,6 +35,16 @@ Automate performance regression testing with Azure Load Testing.
     #loadTestRunDescription: # string. Load Test Run Description. 
     #secrets: # string. Secrets. 
     #env: # string. env.
+    overrideParameters: |
+      {
+        "testId": "testId",
+        "displayName": "displayName",
+        "description": "description",
+        "engineInstances": 1,
+        "autoStop": {
+          "errorPercentage": 90,
+          "timeWindow": 10
+        }
 ```
 
 :::moniker-end
@@ -177,8 +187,10 @@ All tasks have control options in addition to their task inputs. For more inform
 
 :::moniker range="=azure-pipelines"
 
-None.
-
+The ID of the load test run.
+```
+testRunId
+```
 :::moniker-end
 <!-- :::outputVariables-end::: -->
 
